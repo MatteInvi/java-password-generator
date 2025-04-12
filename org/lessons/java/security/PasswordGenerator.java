@@ -4,42 +4,31 @@ import java.util.Scanner;
 public class PasswordGenerator {
 
   public static void main(String[] args) throws Exception {
-    
-    // Varibili
-    String nome;
-    String cognome;
-    String colorePreferito;
-    int giornoNascita;
-    int meseNascita;
-    int annoNascita;
+
 
     // Input
-    Scanner inputNome = new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
+    
     System.out.println("Inserisci il tuo nome:");
-    nome = inputNome.nextLine();
+    String nome = input.nextLine();
 
-    Scanner inputCognome = new Scanner(System.in);
     System.out.println("Inserisci il tuo cognome:");
-    cognome = inputCognome.nextLine();
-
-    Scanner inputColorePreferito = new Scanner(System.in);
+    String cognome = input.nextLine();
+   
     System.out.println("Inserisci il tuo colore preferito:");
-    colorePreferito = inputColorePreferito.nextLine();
+    String colorePreferito = input.nextLine();
 
-    Scanner inputGiornoNascita = new Scanner(System.in);
     System.out.println("Inserisci il tuo giorno di nascita (GG):");
-    String giornoNascitaInserito = inputGiornoNascita.nextLine();
-    giornoNascita = Integer.parseInt(giornoNascitaInserito);
+    String giornoNascitaInserito = input.nextLine();
+    int giornoNascita = Integer.parseInt(giornoNascitaInserito);
 
-    Scanner inputMeseNascita = new Scanner(System.in);
     System.out.println("Inserisci il tuo mese di nascita (MM):");
-    String meseNascitaInserito = inputMeseNascita.nextLine();
-    meseNascita = Integer.parseInt(meseNascitaInserito);
+    String meseNascitaInserito = input.nextLine();
+    int meseNascita = Integer.parseInt(meseNascitaInserito);
 
-    Scanner inputAnnoNascita = new Scanner(System.in);
     System.out.println("Inserisci il tuo anno di nascita (YYYY):");
-    String annoNascitaInserito = inputAnnoNascita.nextLine();
-    annoNascita = Integer.parseInt(annoNascitaInserito);
+    String annoNascitaInserito = input.nextLine();
+    int annoNascita = Integer.parseInt(annoNascitaInserito);
 
     // Calcolo somma data di nascita
     int sommaDataNascita = giornoNascita + meseNascita + annoNascita;
@@ -49,12 +38,8 @@ public class PasswordGenerator {
         "La tua password poco sicura è " + nome + "-" + cognome + "-" + colorePreferito + "-" + sommaDataNascita);
 
     // Chiusure input
-    inputMeseNascita.close();
-    inputGiornoNascita.close();
-    inputAnnoNascita.close();
-    inputCognome.close();
-    inputNome.close();
-    inputColorePreferito.close();
+    input.close();
+
 
   }
 }
